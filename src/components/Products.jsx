@@ -18,7 +18,7 @@ function Products() {
       setErrMsg("");
     } catch (err) {
       console.log(err.response);
-      setErrMsg(err.response.message);
+      setErrMsg(err.response);
     }
   }
 

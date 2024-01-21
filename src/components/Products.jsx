@@ -18,7 +18,7 @@ function Products() {
       setErrMsg("");
     } catch (err) {
     //   console.log(err.response);
-      setErrMsg("An error occurred : No data found");
+      setErrMsg(err.response);
     }
   }
 

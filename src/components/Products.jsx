@@ -4,8 +4,8 @@ import axios from "axios";
 import "regenerator-runtime/runtime";
 
 function Products() {
-    const [productsData, setProductsData] = useState("");
-    const [errMsg, setErrMsg] = useState("")
+  const [productsData, setProductsData] = useState("");
+  const [errMsg, setErrMsg] = useState("");
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -21,17 +21,15 @@ function Products() {
       setErrMsg(err.response.data.message);
     }
   }
-  
-  
+
   return (
     <div>
       <h1>Data Fetched from API</h1>
-      {
-        productsData !== "" && <pre>{JSON.stringify(productsData, undefined, 2)}</pre>
-      }
-      {
-        productsData === "" && errMsg && <div>{errMsg}</div>
-      }
+      {productsData !== "" && (
+        <pre>{JSON.stringify(productsData, undefined, 2)}</pre>
+      )}
+      {productsData === "" && errMsg && <div>{errMsg}</div>}
+      {productsData === "" && !errMsg && <div>Loading...</div>}
     </div>
   );
 }
